@@ -1,4 +1,5 @@
-let sock = new WebSocket('ws://' + window.location.host + '/ws/urlfinder/');
+let wsProto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+let sock = new WebSocket(wsProto + '//' + window.location.host + '/ws/urlfinder/');
 sock.onclose = (e) => {console.error('socket closed');};
 sock.onmessage = (e) => {
     console.log(e);
