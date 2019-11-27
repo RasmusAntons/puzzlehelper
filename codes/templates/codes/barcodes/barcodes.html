@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% load markup_tags %}
+
+{% block page_head %}
+    <title>Barcodes</title>
+{% endblock %}
+
+{% block page_content %}
+    List of Barcodes
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Resources</th>
+            <th>Images</th>
+            <th>Actions</th>
+        </tr>
+    {% for barcode in barcodes %}
+        <tr>
+            <td>{{ barcode.name }}</td>
+            <td>{{ barcode.description|apply_markup:"markdown" }}</td>
+            <td>{{ barcode.resources|apply_markup:"markdown" }}</td>
+            <td>No images available</td>
+            <td><a href="{% url 'barcodes_edit' barcode.short %}">edit</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

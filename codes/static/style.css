@@ -1,0 +1,11 @@
+html {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 150px;
+    max-width: 1200px;
+}
+
+#log {
+    margin-top: 50px;
+    height: 500px;
+}
