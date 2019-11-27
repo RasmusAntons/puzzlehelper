@@ -1,0 +1,21 @@
+#toggle-log {
+    margin-top: 45px;
+}
+
+#log {
+    margin-top: 5px;
+    height: 500px;
+    visibility: hidden;
+}
+
+.result-section {
+    margin-top: 15px;
+}
+
+#results-loading {
+    visibility: hidden;
+}
+
+h3 {
+    display: inline-block;
+}

@@ -11,5 +11,7 @@ async def test_urls(query):
             future.url_scheme = url_scheme
             futures.append(future)
         for future in as_completed(futures):
-            print(future.result())
-            yield future.url_scheme, future.result()
+            try:
+                yield future.url_scheme, future.result()
+            except Exception as e:
+                yield future.url_scheme, None

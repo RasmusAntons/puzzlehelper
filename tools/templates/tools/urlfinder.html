@@ -2,6 +2,8 @@
 
 {% block page_head %}{% load static %}
     <script src="{% static 'js/urlfinder.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'tools.css' %}">
+    <link rel="stylesheet" href="{% static 'loading.css' %}">
 {% endblock %}
 
 {% block page_content %}
@@ -12,5 +14,12 @@
             <button type="submit" class="btn btn-primary" >Request</button>
         </div>
     </form>
-    <textarea readonly id="log", class="form-control"></textarea>
+    <div class="result-section">
+    <h3>Results</h3><div id="results-loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    <table id="results" class="table">
+        <tr><th scope="col">Query</th><th scope="col">Site</th><th scope="col">URL</th></tr>
+    </table>
+    </div>
+    <button type="button" class="btn btn-secondary" id="toggle-log">Show Log</button>
+    <textarea readonly id="log" class="form-control"></textarea>
 {% endblock %}
