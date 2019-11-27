@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         logElem = document.getElementById('log');
         if (window.getComputedStyle(logElem).visibility === 'hidden') {
             logElem.style.visibility = 'visible';
-            e.originalTarget.innerText = 'Hide Log'
+            e.target.innerText = 'Hide Log'
         } else {
             logElem.style.visibility = 'hidden';
-            e.originalTarget.innerText = 'Show Log'
+            e.target.innerText = 'Show Log'
         }
     };
     document.getElementById('urlfinderform').onsubmit = (e) => {
-        let query = e.originalTarget[0].value;
+        let query = e.target[0].value;
         runningQueries.push(query);
         sock.send(JSON.stringify({'query': query}));
         document.getElementById('results-loading').style.visibility = 'visible';
